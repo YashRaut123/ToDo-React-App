@@ -10,7 +10,7 @@ function App() {
   const [todos, setTodos] = useState([])
   const [showFinished, setShowFinished] = useState(true)
 
-  // 🔹 Load from LocalStorage on first render
+
   useEffect(() => {
     const storedTodos = JSON.parse(localStorage.getItem("todos"))
     if (storedTodos) {
@@ -18,7 +18,7 @@ function App() {
     }
   }, [])
 
-  // 🔹 Save automatically whenever todos change
+
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos))
   }, [todos])
@@ -51,7 +51,7 @@ function App() {
     setTodo(e.target.value)
   }
 
-  // ✅ FIXED CHECKBOX FUNCTION
+
   const handleCheckbox = (id) => {
     const newTodos = todos.map(item =>
       item.id === id
@@ -73,13 +73,16 @@ function App() {
             TaskZen - Manage your todos
           </h1>
 
-          {/* Add Todo Section */}
+
           <div className="flex flex-col gap-4 mb-6">
             <h2 className="text-xl font-semibold">Add a Todo</h2>
 
             <div className="flex gap-3">
               <input
-                className="w-full px-4 py-2 rounded-full border-2 border-violet-400 focus:border-violet-600 outline-none"
+                type="text"
+                value={todo}
+                onChange={handleChange}
+                className="w-full px-4 py-2 rounded-full border-2 border-violet-400 focus:border-violet-600 outline-none text-black"
               />
 
               <button
@@ -92,7 +95,7 @@ function App() {
             </div>
           </div>
 
-          {/* Toggle */}
+
           <div className="flex items-center gap-2 mb-4">
             <input
               type="checkbox"
