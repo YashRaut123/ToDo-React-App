@@ -1,2 +1,13 @@
-# ToDo-React-App
-TaskZen is a React-based Todo app featuring add, edit, delete, and toggle functionality with LocalStorage persistence and a responsive Tailwind UI.
+# TaskZen - React Todo App
+
+## Features
+- Add Todo
+- Delete Todo
+- Toggle Complete
+- LocalStorage persistence
+
+## Tech Stack
+- React
+- Tailwind CSS
+- UUID
+- React Icons
